@@ -11,6 +11,7 @@ const API_KEY = "8052819ad9ac38823ec75aa2407bcced";
 export default class extends React.Component {
   state = {
     isLoading: true,
+    condition: "Clear", //set default value to avoid API fetch failure
   };
   getWeather = async (latitude, longitude) => {
     const {
@@ -44,8 +45,6 @@ export default class extends React.Component {
   }
   render() {
     const { isLoading, temp, condition } = this.state;
-    console.log(condition);
-    
     return isLoading ? (
       <Loading />
     ) : (
