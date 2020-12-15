@@ -15,37 +15,37 @@ const weatherOptions = {
     iconName: "weather-hail",
     gradient: ["#89F7FE", "#66A6FF"],
     title: "Drizzle",
-    subtitle: "Is like rain, but gay 🏳️‍🌈",
+    subtitle: "Is like rain",
   },
   Rain: {
     iconName: "weather-rainy",
     gradient: ["#00C6FB", "#005BEA"],
-    title: "Raining like a MF",
+    title: "Raining now",
     subtitle: "For more info look outside",
   },
   Snow: {
     iconName: "weather-snowy",
     gradient: ["#7DE2FC", "#B9B6E5"],
-    title: "Cold as balls",
-    subtitle: "Do you want to build a snowman? Fuck no.",
+    title: "Cold!!",
+    subtitle: "Do you want to build a snowman?",
   },
   Atmosphere: {
     iconName: "weather-hail",
     gradient: ["#89F7FE", "#66A6FF"],
-    title: "Sunny as fuck",
-    subtitle: "Go get your ass burnt",
+    title: "No title",
+    subtitle: "umm...",
   },
   Clouds: {
     iconName: "weather-cloudy",
     gradient: ["#D7D2CC", "#304352"],
     title: "Clouds",
-    subtitle: "I know, fucking boring",
+    subtitle: "I know, boring",
   },
   Clear: {
     iconName: "weather-sunny",
     gradient: ["#FF7300", "#FEF253"],
     title: "Sunny",
-    subtitle: "Go get your ass burnt",
+    subtitle: "Go get your body burnt",
   },
   Haze: {
     iconName: "weather-hail",
@@ -68,7 +68,7 @@ const weatherOptions = {
 };
 
 export default function Weather({ temp, condition }) {
-    //condition = "Clouds" //justfor test
+  //condition = "Rain" //justfor test
   return (
     <LinearGradient
       colors={weatherOptions[condition].gradient}
@@ -84,7 +84,7 @@ export default function Weather({ temp, condition }) {
           />
           <Text style={styles.temp}>{temp}°</Text>
         </View>
-        <View style={{ ...styles.halfContainer, ...styles.textContainer }}>
+        <View style={styles.textContainer}>
           <Text style={styles.title}>{weatherOptions[condition].title}</Text>
           <Text style={styles.subtitle}>
             {weatherOptions[condition].subtitle}
@@ -114,8 +114,6 @@ Weather.propTypes = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
   temp: {
     fontSize: 42,
@@ -131,14 +129,19 @@ const styles = StyleSheet.create({
     fontSize: 44,
     fontWeight: "300",
     marginBottom: 10,
+    textAlign: "left",
   },
   subtitle: {
     fontWeight: "600",
     color: "white",
     fontSize: 24,
+    textAlign: "left",
   },
   textContainer: {
     paddingHorizontal: 20,
     alignItems: "flex-start",
+    paddingHorizontal: 40,
+    justifyContent: "center",
+    flex: 1,
   },
 });
